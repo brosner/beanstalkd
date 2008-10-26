@@ -2,7 +2,7 @@ program := beanstalkd
 export CFLAGS := $(CFLAGS) -Wall -Werror
 export LDFLAGS := $(LDFLAGS) -levent
 
-sources := $(shell ls *.c | fgrep -v $(program))
+sources := $(shell ls *.c | fgrep -v perf.c | fgrep -v $(program))
 objects := $(sources:.c=.o)
 tests := $(sources:%=tests/test_%)
 
